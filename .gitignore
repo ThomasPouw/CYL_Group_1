@@ -25,6 +25,11 @@
 
 # Visual Studio cache directory
 .vs/
+**/Artifacts/
+**/Library/Bee/
+**/Library/StateCache/
+**/Logs/
+**/Temp/
 
 # Gradle cache directory
 .gradle/
@@ -70,3 +75,17 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+*.dwlt
+*.log
+*.exe0.log
+*.exe1.log
+*.exe2.log
+*.exe3.log
+*.exe4.log
+*.exe5.log
+*.exe6.log
+*.digestcache
+*.traceevents
+EditorInstance.json
+ArtifactDB
