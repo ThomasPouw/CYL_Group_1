@@ -9,6 +9,19 @@ public class Weapon : MonoBehaviour
     [SerializeField] Camera FPCamera;
     [SerializeField] float range = 100f;
     [SerializeField] float damage = 35f;
+
+    int modifiedDamage
+    {
+        get { return (int)(damage * StatModifierHandler.instance.GetModifier(ModType.damage)); }
+        set { }
+    }
+
+    int modifiedMaxAmmo
+    {
+        get { return (int)(maxAmmo * StatModifierHandler.instance.GetModifier(ModType.ammoClipSize)); }
+        set { }
+    }
+
     [SerializeField] ParticleSystem muzzleFlash;
     [SerializeField] GameObject hitEffect;
     Animator animator;
@@ -60,7 +73,7 @@ public class Weapon : MonoBehaviour
             CancelAim();
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < maxAmmo)
+        if (Input.GetKeyDown(KeyCode.R) && currentAmmo < modifiedMaxAmmo)
         {
             Reload();
         }
@@ -68,7 +81,7 @@ public class Weapon : MonoBehaviour
 
     private void DisplayAmmo()
     {
-        ammoText.text = $"{currentAmmo} / {maxAmmo}";
+        ammoText.text = $"{currentAmmo} / {modifiedMaxAmmo}";
     }
 
     IEnumerator Switch()
@@ -108,7 +121,7 @@ public class Weapon : MonoBehaviour
             CreateHitImpact(hit);
             EnemyHealth target = hit.transform.GetComponent<EnemyHealth>();
             if (target == null) return;
-            target.ReduceHealth(damage);
+            target.ReduceHealth(modifiedDamage);
         }
         else
         {
@@ -147,7 +160,7 @@ public class Weapon : MonoBehaviour
     {
         //TODO: stop reloading animation/notification
 
-        currentAmmo = maxAmmo;
+        currentAmmo = modifiedMaxAmmo;
         reloading = false;
     }
 
