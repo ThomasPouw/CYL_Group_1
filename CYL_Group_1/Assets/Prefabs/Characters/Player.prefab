@@ -205,6 +205,7 @@ GameObject:
   - component: {fileID: 2002420510}
   - component: {fileID: 2002420511}
   - component: {fileID: 1908022390}
+  - component: {fileID: 1052636235}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -341,6 +342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hitpoints: 100
   DamageOverlay: {fileID: 0}
+  healthText: {fileID: 0}
 --- !u!114 &2002420511
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,6 +373,19 @@ MonoBehaviour:
     ammoAmmount: 90
   - ammoType: 1
     ammoAmmount: 60
+--- !u!114 &1052636235
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4fa87d6999fd394585f134eec37e7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  modifierUiParent: {fileID: 0}
 --- !u!1 &1372802844
 GameObject:
   m_ObjectHideFlags: 0
@@ -443,7 +458,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3640582829511754089}
-  m_LocalRotation: {x: -0, y: 0.99965733, z: -0, w: 0.026176762}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.0014, y: 0.131, z: 0.6787}
   m_LocalScale: {x: 0.0705, y: 0.0705, z: 0.0705}
   m_ConstrainProportionsScale: 0
@@ -5325,14 +5340,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7623720029761330935}
-  m_LocalRotation: {x: -0, y: 0.99965733, z: -0, w: 0.026176762}
-  m_LocalPosition: {x: 13.46, y: 2.27, z: -0.02}
+  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 13.460318, y: 2.2700012, z: -0.020124018}
   m_LocalScale: {x: 0.0705, y: 0.0705, z: 0.0705}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 702977277019038402}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!198 &6713767866808332661
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -10195,7 +10210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2330056204505762766, guid: 079fc3cec6b859a48a4dbe837a7f4b7b, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2330056204505929709, guid: 079fc3cec6b859a48a4dbe837a7f4b7b, type: 3}
       propertyPath: damage
@@ -10504,7 +10519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8882276021481957931, guid: 1a503cffe13a0504ba0619da7f793c9d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a503cffe13a0504ba0619da7f793c9d, type: 3}

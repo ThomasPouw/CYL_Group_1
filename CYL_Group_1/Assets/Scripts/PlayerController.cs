@@ -43,7 +43,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 					//handled last as if strafing and moving forward at the same time forwards speed should take precedence
 					CurrentTargetSpeed = ForwardSpeed;
 				}
-                //TODO: CurrentTargetSpeed *= selectedWeapon.GetSpeedMultiplier();
+                CurrentTargetSpeed *= StatModifierHandler.instance.GetModifier(ModType.speed);
 #if !MOBILE_INPUT
 	            if (Input.GetKey(RunKey))
 	            {
