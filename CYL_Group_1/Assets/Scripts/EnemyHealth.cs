@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,6 +14,8 @@ public class EnemyHealth : MonoBehaviour
     {
         return isDead;
     }
+
+    public float GetCurrentHitPoints() => Math.Max(hitpoints, 0);
 
     public void ReduceHealth(float points)
     {
