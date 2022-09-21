@@ -14,6 +14,7 @@ public class EnemyAttack : MonoBehaviour
 
     public void AttackHitEvent()
     {
+        Debug.Log("attacking");
         if (target == null) return;
         target.DecreaseHealth(damage);
         GetComponent<AudioPlayer>().PlayByName("Attack");

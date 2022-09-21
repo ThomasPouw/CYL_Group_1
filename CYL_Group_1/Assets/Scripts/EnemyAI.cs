@@ -54,8 +54,9 @@ public class EnemyAI : MonoBehaviour
 
     private void Disengage()
     {
-        animator.SetBool("attack", false);
-        animator.SetBool("move", false);
+        Debug.Log("disenaging");
+        animator.SetBool("Attack", false);
+        animator.SetTrigger("Move");
     }
 
     private void EngageTarget()
@@ -75,14 +76,17 @@ public class EnemyAI : MonoBehaviour
 
     private void ChaseTarget()
     {
-        animator.SetBool("move", true);
-        animator.SetBool("attack", false);
+        Debug.Log("chasing");
+        animator.SetBool("Attack", false);
+        animator.SetTrigger("Move");
+        // animator.SetTrigger("Idle");
         navMeshAgent.SetDestination(target.position);
     }
 
     private void AttackTarget()
     {
-        animator.SetBool("attack", true);
+        Debug.Log("attacking");
+        animator.SetBool("Attack", true);
     }
 
     public void OnDamageTaken()
