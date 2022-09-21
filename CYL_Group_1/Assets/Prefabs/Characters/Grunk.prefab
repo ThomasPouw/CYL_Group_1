@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 499950434650580724}
   m_Layer: 0
   m_Name: Grunk
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -788,9 +788,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee60ae73f89604c4caa8feb37d0e6b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chaseRange: 10
+  chaseRange: 5
   turnSpeed: 5
-  shootRange: 15
+  shootRange: 10
   damage: 15
   muzzleFlash: {fileID: 5020791327432045168}
   animator: {fileID: 8175482348657151020}
