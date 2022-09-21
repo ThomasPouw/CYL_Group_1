@@ -8,19 +8,7 @@ public class LevelSwitcher : MonoBehaviour
 
     private bool IsPressed = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision collision)
     {
         if (!IsPressed && Generator != null)
         {
@@ -29,7 +17,7 @@ public class LevelSwitcher : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnCollisionExit(Collision collision)
     {
         IsPressed = false;
     }

@@ -55,11 +55,12 @@ public class LevelGenerator : MonoBehaviour
             return;
 
         int Index = 0;
-        while (Index <= CurrentRunFloors.Length)
+        while (Index < CurrentRunFloors.Length)
         {
             System.Random Random = new System.Random();
             FloorSelection = FloorSelection.OrderBy(x => Random.Next()).ToArray();
             Array.Copy(FloorSelection, 0, CurrentRunFloors, Index, Math.Min(FloorSelection.Length, CurrentRunFloors.Length - Index));
+            Index += Math.Min(FloorSelection.Length, CurrentRunFloors.Length - Index);
         }
     }
 
