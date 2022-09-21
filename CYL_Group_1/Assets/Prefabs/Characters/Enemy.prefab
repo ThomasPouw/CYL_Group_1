@@ -49,7 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseRange: 5
   turnSpeed: 5
-  animator: {fileID: 0}
+  animator: {fileID: 6060956519553866381}
 --- !u!114 &6468984526583973467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +137,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: eb16bb65310b14147b90c00c1f45ec0d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3910b7639e12447827e45f63f60201, type: 3}
+--- !u!95 &6060956519553866381 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 9500000, guid: cf3910b7639e12447827e45f63f60201, type: 3}
+  m_PrefabInstance: {fileID: 6060956519561195501}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6060956519561590123 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400006, guid: cf3910b7639e12447827e45f63f60201, type: 3}
