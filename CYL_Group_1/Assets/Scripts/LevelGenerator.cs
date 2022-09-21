@@ -8,29 +8,31 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] int FloorNumber = 5;
     [SerializeField] DifficultySetting Difficulty = DifficultySetting.INTERMEDIATE;
+    [SerializeField] GameObject StartingRoom;
+    [SerializeField] GameObject EndingRoom;
     [SerializeField] GameObject[] EasyFloorModels;
     [SerializeField] GameObject[] IntermediateFloorModels;
     [SerializeField] GameObject[] HardFloorModels;
 
-    int CurrentFloor = 0;
+    int CurrentFloor = -1;
     GameObject[] CurrentRunFloors;
 
     void Start()
     {
         ResetLevelVisibility();
         GenerateFloorSelection();
-        CurrentRunFloors[0].SetActive(true);
+        StartingRoom.SetActive(true);
     }
 
     public void ResetProgress()
     {
-        CurrentFloor = 0;
+        CurrentFloor = -1;
         ResetCurrentRunLevelVisibility();
     }
 
     public void ResetSession()
     {
-        CurrentFloor = 0;
+        CurrentFloor = -1;
         GenerateFloorSelection();
         ResetCurrentRunLevelVisibility();
     }
@@ -42,6 +44,13 @@ public class LevelGenerator : MonoBehaviour
         CurrentRunFloors[CurrentFloor].SetActive(false);
         if (CurrentFloor + 1 < CurrentRunFloors.Length)
             CurrentRunFloors[++CurrentFloor].SetActive(true);
+        else if (CurrentFloor + 1 >= CurrentRunFloors.Length)
+            EndingRoom.SetActive(true);
+        else
+        {
+            CurrentFloor = -1;
+            StartingRoom.SetActive(true);
+        }
     }
 
     private void GenerateFloorSelection()
@@ -81,19 +90,22 @@ public class LevelGenerator : MonoBehaviour
 
     private void ResetLevelVisibility()
     {
+        StartingRoom.SetActive(true);
         foreach (GameObject Floor in EasyFloorModels)
             Floor.SetActive(false);
         foreach (GameObject Floor in IntermediateFloorModels)
             Floor.SetActive(false);
         foreach (GameObject Floor in HardFloorModels)
             Floor.SetActive(false);
+        EndingRoom.SetActive(false);
     }
 
     private void ResetCurrentRunLevelVisibility()
     {
+        StartingRoom.SetActive(true);
         foreach (GameObject Floor in CurrentRunFloors)
             Floor.SetActive(false);
-        CurrentRunFloors[0].SetActive(true);
+        EndingRoom.SetActive(false);
     }
 }
 
