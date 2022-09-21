@@ -204,8 +204,8 @@ GameObject:
   - component: {fileID: 11400004}
   - component: {fileID: 2002420510}
   - component: {fileID: 2002420511}
-  - component: {fileID: 1908022390}
   - component: {fileID: 1052636235}
+  - component: {fileID: 1948316461}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -356,23 +356,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverCanvas: {fileID: 0}
---- !u!114 &1908022390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100006}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f921956b68f37834c9ef0cd0babef3b2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ammoSlots:
-  - ammoType: 0
-    ammoAmmount: 90
-  - ammoType: 1
-    ammoAmmount: 60
 --- !u!114 &1052636235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -390,6 +373,21 @@ MonoBehaviour:
   modifierPickerCanvas: {fileID: 0}
   maxModifiers: 5
   newModifierText: {fileID: 0}
+--- !u!114 &1948316461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7667a33ecf0a524b9bf99019087ea1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeLeft: 15
+  timerText: {fileID: 0}
+  paused: 0
 --- !u!1 &1372802844
 GameObject:
   m_ObjectHideFlags: 0
@@ -10231,7 +10229,7 @@ PrefabInstance:
     - target: {fileID: 2330056204505929709, guid: 079fc3cec6b859a48a4dbe837a7f4b7b, type: 3}
       propertyPath: ammoSlot
       value: 
-      objectReference: {fileID: 1908022390}
+      objectReference: {fileID: 0}
     - target: {fileID: 2330056204505929709, guid: 079fc3cec6b859a48a4dbe837a7f4b7b, type: 3}
       propertyPath: hitEffect
       value: 
@@ -10464,7 +10462,7 @@ PrefabInstance:
     - target: {fileID: 2472010151989708240, guid: 1a503cffe13a0504ba0619da7f793c9d, type: 3}
       propertyPath: ammoSlot
       value: 
-      objectReference: {fileID: 1908022390}
+      objectReference: {fileID: 0}
     - target: {fileID: 2472010151989708240, guid: 1a503cffe13a0504ba0619da7f793c9d, type: 3}
       propertyPath: ammoType
       value: 1
