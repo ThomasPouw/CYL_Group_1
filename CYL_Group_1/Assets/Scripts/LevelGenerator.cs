@@ -41,7 +41,11 @@ public class LevelGenerator : MonoBehaviour
 
     public void GetNextFloor()
     {
-        CurrentRunFloors[CurrentFloor].SetActive(false);
+        if (CurrentFloor == -1)
+            StartingRoom.SetActive(false);
+        else
+            CurrentRunFloors[CurrentFloor].SetActive(false);
+
         if (CurrentFloor + 1 < CurrentRunFloors.Length)
             CurrentRunFloors[++CurrentFloor].SetActive(true);
         else if (CurrentFloor + 1 >= CurrentRunFloors.Length)
