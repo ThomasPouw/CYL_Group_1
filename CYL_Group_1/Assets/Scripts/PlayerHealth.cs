@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     {
         maxHp = hitpoints;
         HideDamageOverlay();
-        InvokeRepeating(nameof(IncreaseHealth), 5, 5);
+        InvokeRepeating(nameof(IncHealth), 5, 5);
     }
 
     private void Update()
@@ -43,9 +43,16 @@ public class PlayerHealth : MonoBehaviour
         ShowDamageOverlay();
     }
 
-    internal void IncreaseHealth(int increaseAmmount = 5)
+    public void IncreaseHealth(int increaseAmmount)
     {
         hitpoints += increaseAmmount;
+
+        if (hitpoints > modifiedMaxHitpoints) hitpoints = modifiedMaxHitpoints;
+    }
+
+    public void IncHealth()
+    {
+        hitpoints += 5;
 
         if (hitpoints > modifiedMaxHitpoints) hitpoints = modifiedMaxHitpoints;
     }
