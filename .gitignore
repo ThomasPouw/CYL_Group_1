@@ -89,3 +89,4 @@ crashlytics-build.properties
 *.traceevents
 EditorInstance.json
 ArtifactDB
+CYL_Group_1/ProjectSettings/Packages/com.unity.probuilder/Settings.json
